@@ -60,6 +60,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/employees_db
       SPRING_DATASOURCE_USERNAME: mysql
       SPRING_DATASOURCE_PASSWORD: mysql
+    restart: on-failure
 
 volumes:
   keycloakdb_data:
