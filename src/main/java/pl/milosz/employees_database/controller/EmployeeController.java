@@ -20,7 +20,13 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
-    @PostMapping
+    @GetMapping("id/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Employee getEmployeeById(@PathVariable("id") Long id) {
+        return employeeService.findEmployeeById(id);
+    }
+
+    @PostMapping("/addEmployee")
     @ResponseStatus(HttpStatus.CREATED)
     public void addEmployee(@RequestBody Employee employee) {
         employeeService.addEmployee(employee);
