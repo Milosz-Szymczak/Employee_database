@@ -20,15 +20,15 @@ public class InsuranceController {
         return insuranceService.getAllInsurance();
     }
 
-    @PostMapping
+    @PostMapping("/addInsurance")
     @ResponseStatus(HttpStatus.CREATED)
     public void addInsurance(@RequestBody Insurance insurance) {
         insuranceService.addInsurance(insurance);
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/updateInsurance/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateMultiSport(@PathVariable Long id, @RequestBody Insurance insuranceEdit) {
+    public void updateInsurance(@PathVariable Long id, @RequestBody Insurance insuranceEdit) {
         insuranceService.updateInsurance(id, insuranceEdit);
     }
 }

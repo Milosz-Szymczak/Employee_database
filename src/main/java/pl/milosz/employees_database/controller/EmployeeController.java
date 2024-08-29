@@ -32,21 +32,21 @@ public class EmployeeController {
         employeeService.addEmployee(employee);
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/updateEmployee/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateEmployee(@PathVariable Long id, @RequestBody Employee employeeEdit) {
         employeeService.updateEmployee(id, employeeEdit);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteEmployee/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployee(id);
     }
 
-    @GetMapping("/{employeeName}")
+    @GetMapping("/findEmployee/{employeeName}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Employee> findEmployee(@PathVariable String employeeName) {
+    public List<Employee> findEmployee(@PathVariable("employeeName") String employeeName) {
         return employeeService.findEmployeeByName(employeeName);
     }
 }

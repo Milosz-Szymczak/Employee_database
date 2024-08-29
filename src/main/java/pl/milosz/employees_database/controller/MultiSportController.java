@@ -20,13 +20,13 @@ public class MultiSportController {
         return multisportService.getAllMultiSports();
     }
 
-    @PostMapping
+    @PostMapping("/addMultiSport")
     @ResponseStatus(HttpStatus.CREATED)
     public void addMultiSport(@RequestBody MultiSport multisport) {
         multisportService.addMultiSport(multisport);
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/updateMultiSport/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateMultiSport(@PathVariable Long id, @RequestBody MultiSport multiSportEdit) {
         multisportService.updateMultiSport(id, multiSportEdit);
