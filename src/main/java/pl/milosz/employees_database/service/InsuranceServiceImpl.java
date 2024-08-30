@@ -55,4 +55,11 @@ public class InsuranceServiceImpl implements InsuranceService{
 
         insuranceRepository.save(insuranceById);
     }
+
+    @Override
+    public void deleteInsurance(Long id) {
+        log.info("Insurance deleted");
+        Insurance insuranceById = findInsuranceById(id);
+        insuranceRepository.delete(insuranceById);
+    }
 }
