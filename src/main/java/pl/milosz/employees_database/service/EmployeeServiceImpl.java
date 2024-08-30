@@ -60,15 +60,10 @@ public class EmployeeServiceImpl implements EmployeeService{
         if (employeeEdit.getPpk() != null) {
             employeeById.setPpk(employeeEdit.getPpk());
         }
-        if (employeeEdit.getInsurance() != null) {
-            employeeById.setInsurance(employeeEdit.getInsurance());
-        }
-        if (employeeEdit.getMultisport() != null) {
-            employeeById.setMultisport(employeeEdit.getMultisport());
-        }
-        if (employeeEdit.getRemarks() != null) {
-            employeeById.setRemarks(employeeEdit.getRemarks());
-        }
+
+        employeeById.setInsurance(employeeEdit.getInsurance());
+        employeeById.setMultisport(employeeEdit.getMultisport());
+        employeeById.setRemarks(employeeEdit.getRemarks());
 
         employeeRepository.save(employeeById);
     }
