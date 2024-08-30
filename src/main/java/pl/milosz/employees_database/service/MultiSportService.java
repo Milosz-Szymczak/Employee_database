@@ -13,4 +13,6 @@ public interface MultiSportService {
     MultiSport findMultiSportById(Long id);
 
     void updateMultiSport(Long id, MultiSport multiSportEdit);
+
+    void deleteMultiSport(Long id);
 }

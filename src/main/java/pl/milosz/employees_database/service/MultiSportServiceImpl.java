@@ -56,4 +56,10 @@ public class MultiSportServiceImpl implements MultiSportService {
         multiSportRepository.save(multiSportById);
     }
 
+    @Override
+    public void deleteMultiSport(Long id) {
+        log.info("Deleting MultiSport");
+        multiSportRepository.deleteById(id);
+    }
+
 }

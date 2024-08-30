@@ -20,6 +20,12 @@ public class MultiSportController {
         return multisportService.getAllMultiSports();
     }
 
+    @GetMapping("id/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public MultiSport getMultiSportById(@PathVariable("id") Long id) {
+        return multisportService.findMultiSportById(id);
+    }
+
     @PostMapping("/addMultiSport")
     @ResponseStatus(HttpStatus.CREATED)
     public void addMultiSport(@RequestBody MultiSport multisport) {
@@ -30,6 +36,12 @@ public class MultiSportController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateMultiSport(@PathVariable Long id, @RequestBody MultiSport multiSportEdit) {
         multisportService.updateMultiSport(id, multiSportEdit);
+    }
+
+    @DeleteMapping("/deleteMultiSport/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteMultiSport(@PathVariable Long id) {
+        multisportService.deleteMultiSport(id);
     }
 
 }

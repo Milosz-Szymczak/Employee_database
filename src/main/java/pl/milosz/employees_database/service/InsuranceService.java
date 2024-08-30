@@ -12,4 +12,6 @@ public interface InsuranceService {
     Insurance findInsuranceById(Long id);
 
     void updateInsurance(Long id, Insurance insuranceEdit);
+
+    void deleteInsurance(Long id);
 }
