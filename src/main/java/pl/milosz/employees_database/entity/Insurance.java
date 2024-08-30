@@ -21,6 +21,6 @@ public class Insurance {
     @Column(name = "insurance_name", nullable = false)
     private String insuranceName;
 
-    @Column(name = "premium_rate", nullable = false)
+    @Column(name = "insurance_rate", nullable = false)
     private Double insuranceRate;
 }
