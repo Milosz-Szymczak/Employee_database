@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/multisport")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequiredArgsConstructor
 public class MultiSportController {
     private final MultiSportService multisportService;

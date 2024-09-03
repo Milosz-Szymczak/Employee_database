@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/insurance")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequiredArgsConstructor
 public class InsuranceController {
     private final InsuranceService insuranceService;
